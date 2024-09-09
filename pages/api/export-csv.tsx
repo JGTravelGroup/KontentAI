@@ -155,6 +155,6 @@ function fetchContentItems(tour: Tour) {
     tourtype: tour.elements.tourType?.value[0]?.name,
     readeroffertwo: tour.elements.readerOfferIntro2?.value,
     readerofferthree: tour.elements.readerOfferIntro3?.value,
-    bpmincludes: tour.elements.bpmincludes?.value
+    bpmincludes: tour.elements.untitledRichText?.value
   }
 }
