@@ -92,6 +92,10 @@ export default async function handler(req, res) {
     {
       label: 'Reader Offer Intro 3',
       value: 'readerofferthree'
+    },   
+    {
+      label: 'BPM Includes',
+      value: 'bpmincludes'
     }
   ];
 
@@ -154,6 +158,7 @@ function fetchContentItems(tour: Tour) {
     
     tourtype: tour.elements.tourType?.value[0].name,
     readeroffertwo: tour.elements.readerOfferIntro2?.value,
-    readerofferthree: tour.elements.readerOfferIntro3?.value
+    readerofferthree: tour.elements.readerOfferIntro3?.value,
+    bpmincludes: tour.elements.bpmincludes?.value
   }
 }
