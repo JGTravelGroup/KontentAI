@@ -134,7 +134,7 @@ function fetchContentItems(tour: Tour) {
   return {
     tourName: tour.elements.tourTitle?.value,
     description: tour.elements.tourIntro?.value,
-    includes: tour.elements.bpmIncludes?.value,
+    includes: tour.elements.whatsIncluded?.value,
     duration: tour.elements.tourDurationInDays?.value,
     // months: `${startMonth} - ${endMonth}`,
     images: tour.elements.images?.value.map((image) => image.url).join(';'),
