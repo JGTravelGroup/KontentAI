@@ -80,6 +80,15 @@ await generateModelsAsync({
   isEnterpriseSubscription: false,
   addTimestamp: false,
   managementApiUrl: "https://manage.kontent.ai/v2",
+  exportProjectSettings: 
+  { 
+    exportAssetFolders: false,
+    exportCollections: false,
+    exportLanguages: false,
+    exportRoles: false,
+    exportWebhooks: false,
+    exportWorkflows: false
+  },
   addEnvironmentInfo: false,
   elementResolver: (_, elementCodename) => resolveName(elementCodename, "camelCase"),
   contentTypeResolver: byNameResolver("pascalCase"),

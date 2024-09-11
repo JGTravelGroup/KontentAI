@@ -2,8 +2,7 @@
 import { Parser } from 'json2csv';
 import { getTourByCodename } from '../../lib/services/kontentClient';
 import { defaultEnvId, defaultPreviewKey } from '../../lib/utils/env';
-import { Tour_SJ } from '../../models';
-import { formatDate, formatMonthsForLocale } from '../../lib/utils/dateTime';
+import { Tour } from '../../models';
 
 export default async function handler(req, res) {
   // Function to fetch content items and linked items from your CMS
@@ -66,7 +65,7 @@ export function getCurrentDate(separator = '') {
 
 // Mock function to simulate fetching content items from a CMS
 // Replace this with your actual data fetching logic
-function fetchContentItems(tour: Tour_SJ) {  
+function fetchContentItems(tour: Tour) {  
   return {
     tourTitle: tour.elements.tourTitle?.value,
     tourIntro: tour.elements.tourIntro?.value

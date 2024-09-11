@@ -38,4 +38,12 @@ export type Hotel = IContentItem<{
      * Codename: rating
      */
     rating: Elements.TextElement;
+
+    /**
+     * Untitled multiple choice (multiple_choice)
+     * Required: false
+     * Id: f0968608-36c5-4a48-9f8d-91041a6bd4b0
+     * Codename: untitled_multiple_choice
+     */
+    untitledMultipleChoice: Elements.MultipleChoiceElement;
 }>;

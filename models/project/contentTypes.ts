@@ -97,6 +97,53 @@ export const contentTypes = {
     },
 
     /**
+     * Free Text
+     */
+    free_text: {
+        codename: 'free_text',
+        id: 'bcebf480-5936-4145-847c-be9eface8be8',
+        externalId: undefined,
+        name: 'Free Text',
+        elements: {
+            /**
+             * Body Copy (rich_text)
+             */
+            body_copy: {
+                codename: 'body_copy',
+                id: 'c565dd05-c3b1-46c3-9194-67013409dd70',
+                externalId: undefined,
+                name: 'Body Copy',
+                required: true,
+                type: 'rich_text'
+            },
+
+            /**
+             * Copy Type (taxonomy)
+             */
+            copy_type: {
+                codename: 'copy_type',
+                id: '2b2bc541-0f77-47cd-8847-479ee9b73879',
+                externalId: undefined,
+                name: 'Copy Type',
+                required: false,
+                type: 'taxonomy'
+            },
+
+            /**
+             * Title (text)
+             */
+            title: {
+                codename: 'title',
+                id: 'e1097da0-4d32-4f2b-b9d7-f667fbf80474',
+                externalId: undefined,
+                name: 'Title',
+                required: true,
+                type: 'text'
+            }
+        }
+    },
+
+    /**
      * Hotel
      */
     hotel: {
@@ -151,91 +198,38 @@ export const contentTypes = {
                 name: 'Rating',
                 required: false,
                 type: 'text'
-            }
-        }
-    },
-
-    /**
-     * Page
-     */
-    page: {
-        codename: 'page',
-        id: '3ca89ab9-e78b-4932-9d6b-a87ea3197d62',
-        externalId: undefined,
-        name: 'Page',
-        elements: {
-            /**
-             * Content (modular_content)
-             */
-            content: {
-                codename: 'content',
-                id: 'a3e9800d-4e6c-4e34-8e62-019d775eb076',
-                externalId: undefined,
-                name: 'Content',
-                required: false,
-                type: 'modular_content'
             },
 
             /**
-             * Show in navigation (multiple_choice)
+             * Untitled multiple choice (multiple_choice)
              */
-            show_in_navigation: {
-                codename: 'show_in_navigation',
-                id: 'a81d8dae-b77f-41a6-be9a-61b244e4d25d',
+            untitled_multiple_choice: {
+                codename: 'untitled_multiple_choice',
+                id: 'f0968608-36c5-4a48-9f8d-91041a6bd4b0',
                 externalId: undefined,
-                name: 'Show in navigation',
+                name: 'Untitled multiple choice',
                 required: false,
                 type: 'multiple_choice',
                 options: {
-                    yes: {
-                        name: 'Yes',
-                        id: '64b038b2-f874-4444-8e1e-382295483c0b',
-                        codename: 'yes',
+                    lift_to_all_floors: {
+                        name: 'Lift to all Floors',
+                        id: 'a02b0845-41f9-4bfe-be18-f84c83a7abef',
+                        codename: 'lift_to_all_floors',
                         externalId: undefined
                     },
-                    no: {
-                        name: 'No',
-                        id: '41aa3641-d7ea-4957-90c3-5e8a1a71c922',
-                        codename: 'no',
+                    walk_in_showers: {
+                        name: 'Walk in Showers',
+                        id: '585cae31-e5fb-4754-be80-f9da899b9ab6',
+                        codename: 'walk_in_showers',
+                        externalId: undefined
+                    },
+                    steps_at_entrance: {
+                        name: 'Steps at entrance',
+                        id: '5f63c274-5340-403b-b52b-2b743e8c102b',
+                        codename: 'steps_at_entrance',
                         externalId: undefined
                     }
                 }
-            },
-
-            /**
-             * Subpages (subpages)
-             */
-            subpages: {
-                codename: 'subpages',
-                id: '1e36b1f4-0d45-47d5-b290-b4c2f17340e7',
-                externalId: undefined,
-                name: 'Subpages',
-                required: false,
-                type: 'subpages'
-            },
-
-            /**
-             * Title (text)
-             */
-            title: {
-                codename: 'title',
-                id: '7c51f09f-2ddc-47cb-ad4f-c91a2effd38a',
-                externalId: undefined,
-                name: 'Title',
-                required: false,
-                type: 'text'
-            },
-
-            /**
-             * URL (url_slug)
-             */
-            url: {
-                codename: 'url',
-                id: 'c8757f25-632f-4432-b37b-1155f968889d',
-                externalId: undefined,
-                name: 'URL',
-                required: false,
-                type: 'url_slug'
             }
         }
     },
@@ -249,6 +243,18 @@ export const contentTypes = {
         externalId: undefined,
         name: 'Tour',
         elements: {
+            /**
+             * BPM Includes (rich_text)
+             */
+            bpm_includes: {
+                codename: 'bpm_includes',
+                id: '30142482-8471-4743-a6bf-d409db91dd8b',
+                externalId: undefined,
+                name: 'BPM Includes',
+                required: false,
+                type: 'rich_text'
+            },
+
             /**
              * Export Tour (custom)
              */
@@ -341,7 +347,7 @@ export const contentTypes = {
                 id: '75d9d13f-0103-46ac-b644-bb044bcc57f6',
                 externalId: undefined,
                 name: 'Tour duration in days',
-                required: false,
+                required: true,
                 type: 'number'
             },
 
@@ -370,11 +376,178 @@ export const contentTypes = {
             },
 
             /**
+             * Tour Type (taxonomy)
+             */
+            tour_type: {
+                codename: 'tour_type',
+                id: 'e635898b-8de9-40f5-bfe1-6f98e2169b94',
+                externalId: undefined,
+                name: 'Tour Type',
+                required: true,
+                type: 'taxonomy'
+            },
+
+            /**
+             * What s Included (rich_text)
+             */
+            whats_included: {
+                codename: 'whats_included',
+                id: 'a1a40563-6186-4f52-834b-e09a0344ef51',
+                externalId: undefined,
+                name: "What's Included",
+                required: true,
+                type: 'rich_text'
+            }
+        }
+    },
+
+    /**
+     * Tour  No RO Needed
+     */
+    tour__copy_: {
+        codename: 'tour__copy_',
+        id: 'b351ceee-fdea-450a-99a5-dd4b53732c4f',
+        externalId: undefined,
+        name: 'Tour (No RO Needed)',
+        elements: {
+            /**
+             * Export Tour (custom)
+             */
+            export_tour: {
+                codename: 'export_tour',
+                id: '8aa22cd0-bec0-4674-9d7f-83826d9fe4d8',
+                externalId: undefined,
+                name: 'Export Tour',
+                required: false,
+                type: 'custom'
+            },
+
+            /**
+             * Hotel s  (modular_content)
+             */
+            hotel_s_: {
+                codename: 'hotel_s_',
+                id: 'e23120c8-9310-4bfd-8f10-bcdbe3013d6e',
+                externalId: undefined,
+                name: 'Hotel(s)',
+                required: false,
+                type: 'modular_content'
+            },
+
+            /**
+             * Images (asset)
+             */
+            images: {
+                codename: 'images',
+                id: '228a663c-e4c0-45a1-bf49-4338c3cdda40',
+                externalId: undefined,
+                name: 'Images',
+                required: false,
+                type: 'asset'
+            },
+
+            /**
+             * Included Excursions (modular_content)
+             */
+            included_excursions: {
+                codename: 'included_excursions',
+                id: 'd5c75130-a886-44f9-950b-dff2c23ad2ff',
+                externalId: undefined,
+                name: 'Included Excursions',
+                required: false,
+                type: 'modular_content'
+            },
+
+            /**
+             * Optional Excursion s  (modular_content)
+             */
+            optional_excursion_s_: {
+                codename: 'optional_excursion_s_',
+                id: '4c43fc0d-3a5e-4d82-8115-bb298a65c9c9',
+                externalId: undefined,
+                name: 'Optional Excursion(s)',
+                required: false,
+                type: 'modular_content'
+            },
+
+            /**
+             * Reader offer intro 2 (rich_text)
+             */
+            reader_offer_intro_2: {
+                codename: 'reader_offer_intro_2',
+                id: '33f86b39-82d2-460d-bbd4-4f53f400381d',
+                externalId: undefined,
+                name: 'Reader offer intro 2',
+                required: false,
+                type: 'rich_text'
+            },
+
+            /**
+             * Reader offer intro 3 (rich_text)
+             */
+            reader_offer_intro_3: {
+                codename: 'reader_offer_intro_3',
+                id: '9c28938d-bdfa-4daa-b45f-b961b30516a5',
+                externalId: undefined,
+                name: 'Reader offer intro 3',
+                required: false,
+                type: 'rich_text'
+            },
+
+            /**
+             * Tour duration in days (number)
+             */
+            tour_duration_in_days: {
+                codename: 'tour_duration_in_days',
+                id: '3daa20b1-7384-4b4e-9198-d5b78063bc23',
+                externalId: undefined,
+                name: 'Tour duration in days',
+                required: true,
+                type: 'number'
+            },
+
+            /**
+             * Tour Intro (rich_text)
+             */
+            tour_intro: {
+                codename: 'tour_intro',
+                id: '889a6a81-7f1d-4780-82d5-7f435d97fd85',
+                externalId: undefined,
+                name: 'Tour Intro',
+                required: true,
+                type: 'rich_text'
+            },
+
+            /**
+             * Tour Title (text)
+             */
+            tour_title: {
+                codename: 'tour_title',
+                id: 'bf99fa38-7936-4173-8484-a776575f446e',
+                externalId: undefined,
+                name: 'Tour Title',
+                required: true,
+                type: 'text'
+            },
+
+            /**
+             * Tour Type (taxonomy)
+             */
+            tour_type: {
+                codename: 'tour_type',
+                id: 'c9fe632c-bfdb-4471-8d02-d14c1f26432d',
+                externalId: undefined,
+                name: 'Tour Type',
+                required: true,
+                type: 'taxonomy'
+            },
+
+            /**
              * What s Included (rich_text)
              */
             untitled_rich_text: {
                 codename: 'untitled_rich_text',
-                id: 'a1a40563-6186-4f52-834b-e09a0344ef51',
+                id: '2602cf3f-b91b-4380-84ab-196e8ba8de6d',
                 externalId: undefined,
                 name: "What's Included",
                 required: true,

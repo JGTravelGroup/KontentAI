@@ -3,7 +3,6 @@ import { Parser } from 'json2csv';
 import { getTourExportByCodename } from '../../lib/services/kontentClient';
 import { defaultEnvId, defaultPreviewKey } from '../../lib/utils/env';
 import { ExportModule, Tour } from '../../models';
-import { formatDate, formatMonthsForLocale } from '../../lib/utils/dateTime';
 
 export default async function handler(req, res) {
   // Function to fetch content items and linked items from your CMS
@@ -135,7 +134,7 @@ function fetchContentItems(tour: Tour) {
   return {
     tourName: tour.elements.tourTitle?.value,
     description: tour.elements.tourIntro?.value,
-    includes: tour.elements.untitledRichText?.value,
+    includes: tour.elements.bpmIncludes?.value,
     duration: tour.elements.tourDurationInDays?.value,
     // months: `${startMonth} - ${endMonth}`,
     images: tour.elements.images?.value.map((image) => image.url).join(';'),
@@ -159,6 +158,6 @@ function fetchContentItems(tour: Tour) {
     tourtype: tour.elements.tourType?.value[0].name,
     readeroffertwo: tour.elements.readerOfferIntro2?.value,
     readerofferthree: tour.elements.readerOfferIntro3?.value,
-    bpmincludes: tour.elements.untitledRichText?.value
+    bpmincludes: tour.elements.bpmIncludes?.value
   }
 }
