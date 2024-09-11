@@ -128,7 +128,7 @@ function fetchContentItems(tour: Tour) {
   return {
     tourName: tour.elements.tourTitle?.value,
     description: tour.elements.tourIntro?.value,
-    includes: tour.elements.bpmIncludes?.value,
+    includes: tour.elements.whatsIncluded?.value,
     duration: tour.elements.tourDurationInDays?.value,
     images: tour.elements.images?.value.map((image) => image.url).join(';'),
     hotelname: tour.elements.hotelS.linkedItems.map((hotel) => hotel.elements.name?.value).join('|'),
