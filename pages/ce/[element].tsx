@@ -30,14 +30,14 @@ const CustomElementTest: NextPage<IProps> = ({ elementComponent }) => {
                 setContext(context)
                 setValue(element.value as string)
             })
-        } catch (error:any) {
+        } catch (error: any) {
             setError(error.toString())
         }
     }, [])
 
     useEffect(() => {
         if (CustomElement && height as number > 0) {
-            CustomElement.setHeight(Math.ceil(height as number)+15)
+            CustomElement.setHeight(Math.ceil(height as number) + 15)
         }
     }, [height])
 
@@ -48,16 +48,16 @@ const CustomElementTest: NextPage<IProps> = ({ elementComponent }) => {
 
     let customElement = <div><p>There was an issue loading the Custom Element</p></div>
     if (element && context) {
-        switch (elementComponent) {    
+        switch (elementComponent) {
             case "export":
                 customElement = <ExportCustomElement element={element} context={context} handleSave={handleSave} value={value} />
-                break;    
+                break;
             case "export-SJ":
                 customElement = <ExportCustomElement_SJ element={element} context={context} handleSave={handleSave} value={value} />
-                break;  
+                break;
             case "exportall":
                 customElement = <ExportToursCustomElement element={element} context={context} handleSave={handleSave} value={value} />
-                break;  
+                break;
             default:
                 customElement = <div><p>Custom element not configured in code</p></div>
                 break;
@@ -65,19 +65,17 @@ const CustomElementTest: NextPage<IProps> = ({ elementComponent }) => {
     } else {
         customElement = <div><p>The <code>Element</code> and/or <code>Context</code> is not loaded yet</p></div>
     }
-
-
     return (
-    <>
-    <Head>
-        <script src="https://app.kontent.ai/js-api/custom-element/v1/custom-element.min.js"></script>
-    </Head>
-    <div>
-        <div ref={ref}>
-            {customElement}
-        </div>
-    </div>
-    </>)
+        <>
+            <Head>
+                <script src="https://app.kontent.ai/js-api/custom-element/v1/custom-element.min.js"></script>
+            </Head>
+            <div>
+                <div ref={ref}>
+                    {customElement}
+                </div>
+            </div>
+        </>)
 }
 
 export default CustomElementTest;
@@ -94,7 +92,7 @@ export const getStaticPaths: GetStaticPaths = async (params) => {
 }
 
 export const getStaticProps: GetStaticProps<IProps, NodeJS.Dict<string>> = async context => {
-    const { element } : any = context.params
+    const { element }: any = context.params
 
     return {
         props: {
