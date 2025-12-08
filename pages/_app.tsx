@@ -1,6 +1,5 @@
 import '../styles/globals.scss';
 import { AppProps } from 'next/app';
-import 'node_modules/flag-icons/css/flag-icons.min.css';
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   return (
