@@ -118,8 +118,7 @@ export const getItemByUrlSlug = <ItemType extends IContentItem>(config: ClientCo
 
 export const getTourByCodename = (config: ClientConfig, tourCodename: string, usePreview: boolean) =>
   getDeliveryClient(config)
-    .items<Tour>()
-    .type(contentTypes.tour.codename)
+    .items()
     .limitParameter(1)
     .equalsFilter(`system.codename`, tourCodename)
     .depthParameter(defaultDepth)
@@ -131,7 +130,7 @@ export const getTourByCodename = (config: ClientConfig, tourCodename: string, us
       if (res.response.status === 404) {
         return null;
       } ""
-      return res.data.items[0] as Tour
+      return res.data.items[0]
     })
     .catch((error) => {
       debugger;
